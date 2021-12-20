@@ -23,7 +23,7 @@ client.on('messageCreate', (message) => {
   }
 });
 
-/******************* 如果出錯 *******************/
+/******************* Error catching *******************/
 client.on('error', console.log);
 process.on('uncaughtException', console.log);
 /**/
