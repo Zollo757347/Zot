@@ -21,6 +21,12 @@ client.on('messageCreate', (message) => {
       sum += +args[i];
     message.reply(sum.toString());
   }
+  if (args[0] == "mul") {
+    let res = 1;
+    for (let i = 1; i < args.length; ++i)
+      res *= +args[i];
+    message.reply(res.toString());
+  }
 });
 
 /******************* Error catching *******************/
