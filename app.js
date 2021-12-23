@@ -15,21 +15,39 @@ client.once('ready', () => {
 client.on('messageCreate', (message) => {
   let args = message.content.split(' '); // arguments
 
-  if (args[0] == "add") {
-    let sum = 0;
-    for (let i = 1; i < args.length; ++i)
-      sum += +args[i];
-    message.reply(sum.toString());
+  let numTotal, numInporsters;
+  if (args[0] == "!impStart") {
+    message.reply("csiduvbhsjvbedrivhrf");
+    switch (args[1]) {
+      case "easy":
+        numTotal = 9;
+        break;
+      case "medium":
+        numTotal = 18;
+        break;
+      case "hard":
+        numTotal = 36;
+        break;
+      case "Glitch":
+        numTotal = 300;
+        break;
+    }
+
+    numImporsters = numTotal/3 + Math.floor( (numToatal / 3 + 1) * Math.random() );
+    message.reply(`start! the numbers of imporsters ${numImporsters}`);
   }
-  if (args[0] == "mul") {
-    let res = 1;
-    for (let i = 1; i < args.length; ++i)
-      res *= +args[i];
-    message.reply(res.toString());
+
+  if (args[0] == "!impHint") {
+
   }
+
+  if (args[0] == "!impGuess") {
+
+  }
+
 });
 
-/******************* 如果出錯 *******************/
+/******************* Error Catching *******************/
 client.on('error', console.log);
 process.on('uncaughtException', console.log);
 /**/
